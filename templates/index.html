@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/style.css">
+    
+    <title>ML Heart Disease Prediction</title>
+</head>
+<body>
+    <div class="header">
+      <div class="container">
+        <h2 class ='container-heading'>Heart Disease Prediction</h2>
+        <h3 class = 'desc'>A Machine Learning Web Application that predicits chances of having heart Disease or not.
+        <br>Built with Flask and Deployed using Heroku.</h3>
+        <h4 class = "note">(Note:This model is 91.30% accurate)</h4>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="main-content">
+      <form action="/predict" method="POST">
+        <div class="col">
+          <label class = "field-label" for="age">Age</label>
+          <input class="fields" type="text" id="age" name="age" placeholder="Your age">
+          <br><br>
+          <label class ="field-label" for="sex">Sex</label>
+            <select class="fields" id="sex" name="sex">
+              <option class = "options" selected>----select option----</option>
+              <option class = "options" value="1">Male</option>
+              <option class = "options" value="0">Female</option>
+            </select><br><br>
+
+            <label class ="field-label" for="cp">Chest Pain Type</label>
+            <select class="fields" id="cp" name="cp">
+              <option selected>----select option----</option>
+              <option class = "options" value="0">Typical Angina</option>
+              <option class = "options" value="1">Atypical Angina</option>
+              <option class = "options" value="2">Non-anginal Pain</option>
+              <option class = "options" value="3">Asymtomatic</option>
+            </select>
+            <br><br>
+  
+            <label class ="field-label" for="trestbps">Resting Blood Pressure</label>
+            <input class="fields" type="text" id="trestbps" name="trestbps" placeholder="A number in range [94-200] mmHg">
+            <br><br>
+  
+            <label class ="field-label" for="chol">Serum Cholesterol</label>
+            <input class="fields" type="text" type="text" id="chol" name="chol" placeholder="A number in range [126-564] mg/dl">
+            <br><br>
+  
+            <label class ="field-label" for="fbs">Fasting Blood Sugar</label>
+            <select class="fields" type="text" id="fbs" name="fbs">
+              <option class = "options" selected>----select option----</option>
+              <option class = "options" value="1">Greater than 120 mg/dl</option>
+              <option class = "options" value="0">Less than 120 mg/dl</option>
+            </select>
+            <br><br>
+  
+            <label class ="field-label" for="restecg">Resting ECG Results</label>
+            <select class="fields" id="restecg" name="restecg">
+              <option class = "options" selected>----select option----</option>
+              <option class = "options" value="0">Normal</option>
+              <option class = "options" value="1">Having ST-T wave abnormality</option>
+              <option class = "options" value="2">Probable or definite left ventricular hypertrophy</option>
+            </select>
+            <br><br>
+        </div>
+        
+          <div class="col">
+            <label class ="field-label" for="thalach">Max Heart Rate </label>
+            <input class="fields" type="text" id="thalach" name="thalach" placeholder="A number in range [71-202] bpm">
+            <br><br>
+  
+            <label class ="field-label" for="exang">Exercise-induced Angina</label>
+            <select class="fields" id="exang" name="exang">
+              <option class = "options" selected>----select option----</option>
+              <option class = "options" value="1">Yes</option>
+              <option class = "options" value="0">No</option>
+            </select>
+            <br><br>
+    
+            <label class ="field-label" for="oldpeak">ST depression</label>
+            <input class="fields" type="text" id="oldpeak" name="oldpeak" placeholder="ST depression, typically in [0-6.2]">
+            <br><br>
+
+            <label class ="field-label" for="slope">slope of the peak exercise ST segment</label>
+            <select class="fields" id="slope" name="slope">
+              <option class = "options" selected>----select option----</option>
+              <option class = "options" value="0">Upsloping</option>
+              <option class = "options" value="1">Flat</option>
+              <option class = "options" value="2">Downsloping</option>
+            </select>
+            <br><br>
+            
+            <label class ="field-label" for="ca">Number of Major vessels</label>
+            <input class="fields" type="text" id="ca" name="ca" placeholder="Typically in [0-4]">
+            <br><br> 
+                            
+            <label class ="field-label" for="thal">Thalassemia</label> 
+            <select class="fields" id="thal" name="thal">
+              <option class = "options" selected>----select option----</option>
+              <option class = "options" value="0">Normal</option>
+              <option class = "options" value="1">Fixed Defect</option> 
+              <option class = "options" value="2">Reversible Defect</option>  
+            </select><br><br>
+          </div>
+            <input class="btn" type="submit" value="PREDICT">
+        </form>
+        
+      </div>
+      
+    </div>
+    
+</html>

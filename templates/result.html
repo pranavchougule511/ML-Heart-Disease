@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Heart Disease Predictor</title>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../static/style.css">
+	</head>
+
+    <body>
+
+        <div class="header">
+            <div class="container">
+              <h2 class ='container-heading'>Heart Disease Prediction</h2>
+              <h3 class = 'desc'>A Machine Learning Web Application that predicits chances of having heart Disease or not.
+              <br>Built with Flask and Deployed using Heroku.</h3>
+              <h4 class = "note">(Note:This model is 91.30% accurate)</h4>
+            </div>
+          </div>
+
+		<!-- Result -->
+		<div class="main-container">
+			<div class="main-content">
+			{% if prediction == 1 %}
+				<h1>Prediction: <span class='danger'>The person may have Chances of Heart Disease.</span></h1>
+				
+			{% elif prediction == 0 %}
+				<h1>Prediction: <span class='safe'>The person don't have chances of getting a Heart Disease.</span></h1>
+				
+			{% endif %}
+		</div>
+		</div>
+
+
+	</body>
+</html>
